@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Sentry.CrashReporter.ViewModels;assembly=Sentry.CrashReporter"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="700" Height="545"
+        x:Class="Sentry.CrashReporter.Views.MainWindow"
+        Icon="/Assets/sentry.ico"
+        Title="Sentry Crash Reporter">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <StackPanel Width="618" Height="500">
+        <TextBlock Text="It looks like we're having issues." Margin="10" FontSize="28"
+                   FontFamily="Helvetica Neue, helvetica, sans-serif" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+        <TextBlock Text="Our team has been notified. If you'd like to help, tell us what happened below." Foreground="Gray"
+                   FontSize="15" FontFamily="Helvetica Neue, helvetica, sans-serif" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+        <TextBlock Margin="5,25,5,5" Text="NAME" />
+        <TextBox Margin="5" Height="42" Watermark="Jane Bloggs" />
+        <TextBlock Margin="5" Text="EMAIL" />
+        <TextBox Margin="5,25,5,5" Height="42" Watermark="jane@example.com" />
+        <TextBlock Margin="5" Text="WHAT HAPPENED?" />
+        <TextBox Margin="5,25,5,5" Height="100" Watermark="I clicked on 'X' and then hit 'Confirm'" UseFloatingWatermark="True" AcceptsReturn="True"
+                 TextWrapping="Wrap" />
+        <DockPanel Margin="5,25,5,5">
+            <Button Foreground="White" Height="44" FontSize="16" Width="187" Background="#1D87CE" Margin="0,5,10,0">Submit Crash Report</Button>
+            <Button BorderThickness="0" Background="White">Close</Button>
+            <DockPanel HorizontalAlignment="Right">
+                <TextBlock Margin="0,18,5,0" Text="Crash reports powered by Sentry" FontFamily="Helvetica Neue, helvetica, sans-serif" />
+                <Image Source="/Assets/sentry-logo.png" Width="86" Height="23" />
+            </DockPanel>
+        </DockPanel>
+    </StackPanel>
+</Window>
