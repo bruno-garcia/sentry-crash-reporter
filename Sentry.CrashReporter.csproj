@@ -3,6 +3,21 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <PublishTrimmed>True</PublishTrimmed>
+    <TrimMode>Link</TrimMode>
+    <PublishSingleFile>True</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>True</IncludeNativeLibrariesForSelfExtract>
+    <!-- Trade smaller binary for slower startup: -->
+    <ReadyToRun>False</ReadyToRun>
+    <DebuggerSupport>False</DebuggerSupport>
+    <EnableUnsafeUTF7Encoding>False</EnableUnsafeUTF7Encoding>
+    <EnableUnsafeBinaryFormatterSerialization>False</EnableUnsafeBinaryFormatterSerialization>
+    <EventSourceSupport>False</EventSourceSupport>
+    <InvariantGlobalization>False</InvariantGlobalization>
+    <UseSystemResourceKeys>True</UseSystemResourceKeys>
+    <HttpActivityPropagationSupport>False</HttpActivityPropagationSupport>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Compile Update="**\*.xaml.cs">
